@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Balsamiq+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="../public/styles/addarticle.css" />
+    <title>Add article</title>
+  </head>
+
+  <body>
+    <div id="errorMessage"></div>
+    <div class="main-container">
+      <div class="blog-add">
+        <form id="addArticle" action="/articles" method="POST">
+          Image URL:<br/>
+        <input type="text" name="image" placeholder="Add image url">
+          Date:<br />
+        <input name="date" type="text" autocomplete="off" placeholder="Date created" required/>
+        Title:<br />
+        <input name="title" type="text" autocomplete="off" placeholder="Add article title" required/>
+        content:<br />
+        <textarea name="description" id="editor" rows="10" cols="80">
+      </textarea>
+        <button type="submit" class="btn">Post</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Mongo scripts-->
+    <script>  
+
+        let form = document.getElementById('addArticle');
+
+          form.addEventListener('submit' , function (e){
+            e.preventDefault();
+            let data = {
+              title : form.title.value,
+              date : form.date.value,
+              image : form.image.value,
+              description : form.description.value
+            };
+
+            fetch('https://kundwabruno-portfolio.herokuapp.com/articles', {
+            method: 'POST', 
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+          });
+
+
+
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+
+<script> -->
+  <!-- // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional -->
+  <!-- var firebaseConfig = {
+    apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
+    authDomain: "my-portfolio-53f39.firebaseapp.com",
+    databaseURL: "https://my-portfolio-53f39.firebaseio.com",
+    projectId: "my-portfolio-53f39",
+    storageBucket: "my-portfolio-53f39.appspot.com",
+    messagingSenderId: "544508778619",
+    appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
+    measurementId: "G-9RLF5K1H1C"
+  }; -->
+  <!-- // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db = firebase.firestore(); -->
+<!-- </script> --> -->
+<script src="/scripts/blogScripts/addarticle.js"></script>
+  </body>
+</html>

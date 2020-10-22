@@ -1,0 +1,207 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #1C2833;
+}
+
+/* Navigation bar starts here */
+
+.nav-bar {
+    position: sticky;
+    top: 0;
+    background: #1c2833;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    box-shadow: 1px 1px 3px black;
+    z-index: 2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand {
+    flex: 1;
+    font-family: "Righteous", cursive, Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.navigation {
+    flex: 3;
+    text-align: right;
+    font-family: "Marvel", sans-serif;
+    font-size: 20px;
+}
+
+.navigation a {
+    margin-right: 80px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: #09d5b0;
+}
+
+.icons {
+    margin-right: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+/* Navigation bar responsivity */
+
+.hamburger {
+    right: 0;
+    margin-right: 30px;
+    display: none;
+    position: absolute;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+.hamb-line {
+    border: 2px solid white;
+    margin-bottom: 3px;
+    width: 15px;
+}
+
+.resp-nav {
+    background-color: #1c2833;
+    text-align: center;
+    position: fixed;
+    right: 0;
+    padding-top: 30px;
+    width: 50%;
+    color: white;
+    height: 100vh;
+    box-shadow: 1px 1px 3px black;
+    display: none;
+    z-index: 1;
+}
+
+.resp-nav a {
+    display: block;
+    margin-bottom: 80px;
+    font-family: "Marvel", sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.resp-nav a:hover {
+    background-color: #09d5b0;
+}
+
+/* Navigation bar ends here */
+
+
+.main {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    background-color: #26425C;
+    color: white;
+    border-radius: 10px;
+    padding: 30px 0px 30px;
+    font-family: "Maven", Arial, Helvetica, sans-serif;
+}
+
+.form-container i {
+    font-size: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+input {
+
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.btn {
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: "Marvel", sans-serif;
+    width: 100px;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #26425c;
+    color: white;
+    cursor: pointer;
+}
+
+#already {
+    display: block;
+    margin-top: 10px;
+    color: white
+}
+
+#already a {
+    color: #09d5b0;
+    text-decoration: teal;
+}
+
+.footer {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    color: white;
+    font-family: "Maven Pro", "Marvel", sans-serif;
+    font-size: 12px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 896px) {
+
+    /* Navigation Bar */
+    .navigation {
+        display: none;
+    }
+
+    .brand {
+        flex: none;
+        margin-left: 30px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Ends here */
+
+    .form-container {
+        width: 100%;
+    }
+}

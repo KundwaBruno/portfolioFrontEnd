@@ -1,0 +1,87 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #1c2833;
+    font-family: "Poppins",Arial, Helvetica, sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: teal;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+input[type=text]:disabled{
+    color: #858584;
+    background-color: #FCD9BA;
+}
+
+.blog-add {
+    margin-top: 50px;
+}
+#errorMessage{
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    top: 0;
+    text-align: center;
+    display: none;
+    padding: 10px;
+    color: #FA657E;
+
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Marvel", Arial, Helvetica, sans-serif;
+}
+
+input {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    width: 200px;
+    border-radius: 7px;
+    outline: none;
+    font-family: "Poppin",Arial, Helvetica, sans-serif;
+}
+
+.btn {
+    display: block;
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1c2833;
+    color: white;
+    border: 1px solid cyan;
+}
+
+#summernote{
+    background-color: white;
+    color: red;
+}

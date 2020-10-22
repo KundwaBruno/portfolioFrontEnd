@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Balsamiq+Sans:wght@700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="msg.css">
+    <title>Messages</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <ul class="article-container" id="article-thumbnails">
+            
+        </ul>
+        <!-- <div class="thumbnail-holder">
+            <div class="blog-thumbnail">
+                <div style="text-align: center;"><input type="checkbox"></div>
+                <div><span id="articleNumber"></span> 1. </div>
+                <div>
+                    <h3>ARTICLE TITLE</h3>
+                </div>
+                <div><span>12/11/2020</span></div>
+                <div>
+                    <i class="fas fa-thumbs-up"></i><span> 12</span>
+                    <i class="fas fa-thumbs-down"></i><span> 3</span>
+                    <i class="fas fa-comment"></i><span> 8</span>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
+    authDomain: "my-portfolio-53f39.firebaseapp.com",
+    databaseURL: "https://my-portfolio-53f39.firebaseio.com",
+    projectId: "my-portfolio-53f39",
+    storageBucket: "my-portfolio-53f39.appspot.com",
+    messagingSenderId: "544508778619",
+    appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
+    measurementId: "G-9RLF5K1H1C"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db = firebase.firestore();
+</script>
+<script src="msg.js"></script>
+</body>
+
+</html>

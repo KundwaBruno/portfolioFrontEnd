@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Balsamiq+Sans:wght@700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+
+  <!-- JQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../public/styles/dashboard.css" />
+
+  <title>Dash-board</title>
+</head>
+
+<body>
+  <div class="navigation">
+    <div class="nav-container">
+      <div class="header-name">
+        <h2>DASHBOARD</h2>
+      </div>
+      <div class="nav">
+        <button class="btn">Log out</button>
+      </div>
+      <div style="margin: 0px 10px 0px; color: #85929e; font-size: 20px" class="notifications">
+        <i class="fas fa-bell"></i>
+      </div>
+      <div class="img-container">
+        <img src="../images/save.jpg" alt="profile pic" />
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="side-bar">
+      <div class="options-container">
+        <div id="addArticle" class="options">
+          <i class="fas fa-plus"></i> Add Article
+        </div>
+        <div id="deleteArticle" class="options">
+          <i class="far fa-newspaper"></i> Articles
+        </div>
+        <div id="editArticle" class="options">
+          <i class="fas fa-edit"></i> Edit
+        </div>
+        <div id="viewMessages" class="options">
+          <i class="fas fa-comment"></i> Messages
+          <!-- <span id="counter">0</span> -->
+        </div>
+      </div>
+      <div class="footerlast">
+        <p>
+          <span style="opacity: 50%">Designed and Built by </span>Kundwa Bruno
+        </p>
+        <p style="opacity: 50%">&copy; 2020-2021</p>
+      </div>
+    </div>
+    <div class="content">
+      <div class="search">
+        <form action="">
+          <div class="form-input">
+            <input type="text" placeholder="search articles by title" /><button class="btn"><i
+                class="fas fa-search"></i></button>
+          </div>
+        </form>
+      </div>
+      <div class="blog-searched">
+        <iframe id="frame" src="addarticle.html"></iframe>
+        <!-- <div class="blog-card">
+          <div class="image"><img src="../images/programming.jpg" alt="programming"></div>
+          <div class="text">
+            <div class="header-text">
+              <div style="flex: 1;">
+                <span style="font-size: 20px; font-weight: bolder;">BLOG TITLE</span>
+              </div>
+              <div style="flex: 1; text-align: center;"><span>11/9/2020</span></div>
+            </div>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+              and scrambled it to make a type specimen book.</p>
+          </div>
+          <div class="footer">
+            <div class="ico">
+              <i class="fas fa-thumbs-up"></i><span> 12</span>
+              <i class="fas fa-thumbs-down"></i><span> 3</span>
+              <i class="fas fa-comment"></i><span> 8</span>
+            </div>
+            <div class="profile">
+              <i class="far fa-user-circle"></i><span> Kundwa Bruno</span>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <script src="/scripts/blogScripts/dash.js"></script>
+</body>
+
+</html>

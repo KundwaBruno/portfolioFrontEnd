@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Balsamiq+Sans:wght@700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../public/styles/blog.css">
+    <title>KBM | Blog</title>
+</head>
+
+<body>
+    <!-- Navigation bar code -->
+
+    <div class="nav-bar">
+        <div class="brand">KBM</div>
+        <div class="navigation">
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#about">About</a>
+          <a id="gotoBlog" href="../pages/signup.html">Blog</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="hamburger" id="ham">
+          <div class="hamb-line"></div>
+          <div class="hamb-line"></div>
+          <div class="hamb-line"></div>
+        </div>
+      </div>
+      <div class="resp-nav" id="respNavigation">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a id="gotoBlog" href="../pages/signup.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+
+  <!-- Navigation bar code ends here -->
+    <div class="header">
+        <h1 id="welcome"></h1>
+        <p>Please refer to <span style="color: #09d5b0;">Terms and Conditions</span> before
+            contributing to my Blog, Thanks :)</p>
+    </div>
+
+
+    <div class="container">
+        <div class="blog">
+            <div class="blog-content-container">
+                <div class="img-container">
+                    <img src="../public/images/programming.jpg" alt="blog-image"><br>
+                    <i style="color: #DF376C;" class="far fa-heart ">12</i>
+                    <i class="fas fa-comments ">12</i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-head">
+                        <div class="title">Title</div>
+                        <div class="date">Date</div>
+                    </div>
+                    <div class="blog-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, atque recusandae maxime et ullam dignissimos minima minus exercitationem, dolor voluptatem distinctio voluptas ad quidem? Libero eum culpa quaerat omnis nihil?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-section">
+                <div class="comments">
+                    <div class="comment">
+                        <div class="user-thumbnail"><i style="color: white; font-size: 20px;" class="fas fa-user"></i></div>
+                        <span style="color: white;">username</span>
+                        <div class="comment-description">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam sit harum molestiae ex sed deleniti ea assumenda commodi, reprehenderit magnam praesentium possimus corporis voluptate quos delectus sint exercitationem ratione aliquid.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="comment-container">
+                    <div class="add-comment"> 
+                        <form action="/blog" method="POST">
+                            <div class="user-thumbnail"><i style="color: white; font-size: 20px;" class="fas fa-user"></i></div>
+                            <input name="comment" type="text" placeholder="Add your comment">
+                            <button class="btn" type="submit">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="blog">
+            <div class="blog-content-container">
+                <div class="img-container">
+                    <img src="/images/programming.jpg" alt="blog-image"><br>
+                    <i style="color: #DF376C;" class="far fa-heart ">12</i>
+                    <i class="fas fa-comments ">12</i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-head">
+                        <div class="title">BLOG TITLE</div>
+                        <div class="date">10 Min ago</div>
+                    </div>
+                    <div class="blog-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores dignissimos voluptatum modi! Voluptates amet a accusantium debitis, mollitia quo totam voluptas quis laboriosam doloribus, consequatur voluptatum, quod inventore molestiae!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-section">
+                <div class="comments">
+                    <div class="comment">
+                        <div class="user-thumbnail"><i style="color: white; font-size: 20px;" class="fas fa-user"></i></div>
+                        <span style="color: white;"> User name</span>
+                        <div class="comment-description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam repudiandae possimus aliquam harum </p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="user-thumbnail"><i style="color: white; font-size: 20px;" class="fas fa-user"></i></div>
+                        <span style="color: white;"> User name</span>
+                        <div class="comment-description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam repudiandae possimus aliquam harum </p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="user-thumbnail"><i style="color: white; font-size: 20px;" class="fas fa-user"></i></div>
+                        <span style="color: white;"> User name</span>
+                        <div class="comment-description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam repudiandae possimus aliquam harum </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="comment-container">
+                    <div class="add-comment"> 
+                        <form action="">
+                            <div class="user-thumbnail"><i style="color: white; font-size: 20px;" class="fas fa-user"></i></div>
+                            <input type="text" placeholder="Add your comment">
+                            <button class="btn" type="submit">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="blog">
+            <div class="blog-content-container">
+                <div class="img-container">
+                    <img src="/images/programming.jpg" alt="blog-image"><br>
+                    <i style="color: #DF376C;" class="far fa-heart ">12</i>
+                    <i class="fas fa-comments ">12</i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-head">
+                        <div class="title">BLOG TITLE</div>
+                        <div class="date">random</div>
+                    </div>
+                    <div class="blog-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores dignissimos voluptatum modi! Voluptates amet a accusantium debitis, mollitia quo totam voluptas quis laboriosam doloribus, consequatur voluptatum, quod inventore molestiae! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, quod accusantium! Possimus, tempora dolore in nemo est veritatis soluta similique dolor. Laboriosam minima animi non! Et optio sint explicabo quidem.
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-section">
+                <div class="comments">
+                    <div class="comment">
+                        <div class="user-thumbnail"><i style="color: white; font-size: 20px;" class="fas fa-user"></i></div>
+                        <span style="color: white;"> User name</span>
+                        <div class="comment-description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam repudiandae possimus aliquam harum </p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="user-thumbnail"><i style="color: white; font-size: 20px;" class="fas fa-user"></i></div>
+                        <span style="color: white;"> User name</span>
+                        <div class="comment-description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam repudiandae possimus aliquam harum </p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="user-thumbnail"><i style="color: white; font-size: 20px;" class="fas fa-user"></i></div>
+                        <span style="color: white;"> User name</span>
+                        <div class="comment-description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam repudiandae possimus aliquam harum </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="comment-container">
+                    <div class="add-comment"> 
+                        <form action="">
+                            <div class="user-thumbnail"><i style="color: white; font-size: 20px;" class="fas fa-user"></i></div>
+                            <input type="text" placeholder="Add your comment">
+                            <button class="btn" type="submit">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+
+
+
+
+
+    <div class="footerlast">
+        <p><span style="opacity: 50%;">Designed and Built by </span>Kundwa Bruno</p>
+        <p style="opacity: 50%;">&copy; 2020-2021</p>
+    </div>
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
+    authDomain: "my-portfolio-53f39.firebaseapp.com",
+    databaseURL: "https://my-portfolio-53f39.firebaseio.com",
+    projectId: "my-portfolio-53f39",
+    storageBucket: "my-portfolio-53f39.appspot.com",
+    messagingSenderId: "544508778619",
+    appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
+    measurementId: "G-9RLF5K1H1C"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+<script>
+    let blogButton = document.getElementById("gotoBlog");
+    let logoutBtn = document.getElementById("logoutBtn");
+    auth.onAuthStateChanged(user => {
+    if(user){
+      console.log("Logged in as : " + user.displayName);
+      console.log(user);
+      document.getElementById("welcome").textContent = "Welcome " + user.displayName + "!";
+      logoutBtn.innerText = "Logout";
+      document.getElementById("nameDisplay").innerText = user.displayName;
+      blogButton.setAttribute("href","file:///C:/Users/TDE_KBM/Desktop/Programming/Andela/UI/Blog/blog.html");
+    }else{
+      console.log("Logged out");
+      logoutBtn.innerText = "Login";
+      logoutBtn.setAttribute("onclick","window.location.href='../signin.html'")
+      document.getElementById("nameDisplay").style.display === "none";
+      blogButton.setAttribute("href","../index.html");
+    }
+  });
+
+  logoutBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    auth.signOut().then(()=>{
+      location.reload();
+     })
+  })
+</script>
+    <script src="../index.js"></script>
+</body>
+
+</html>

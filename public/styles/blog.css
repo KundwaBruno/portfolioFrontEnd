@@ -1,0 +1,269 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #1c2833;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Navigation bar starts here */
+.nav-bar {
+    position: sticky;
+    top: 0;
+    background: #1c2833;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    box-shadow: 1px 1px 3px black;
+    z-index: 2;
+}
+#logoutBtn{
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand {
+    flex: 1;
+    font-family: "Righteous", cursive, Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.navigation {
+    flex: 3;
+    text-align: right;
+    font-family: "Marvel", sans-serif;
+    font-size: 20px;
+}
+
+.navigation a {
+    margin-right: 80px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: #09d5b0;
+}
+
+.icons {
+    margin-right: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+/* Navigation bar responsivity */
+
+.hamburger {
+    right: 0;
+    margin-right: 30px;
+    display: none;
+    position: absolute;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+.hamb-line {
+    border: 2px solid white;
+    margin-bottom: 3px;
+    width: 15px;
+}
+
+.resp-nav {
+    background-color: #1c2833;
+    text-align: center;
+    position: fixed;
+    right: 0;
+    padding-top: 30px;
+    width: 50%;
+    color: white;
+    height: 100vh;
+    box-shadow: 1px 1px 3px black;
+    display: none;
+    z-index: 1;
+}
+
+.resp-nav a {
+    display: block;
+    margin-bottom: 80px;
+    font-family: "Marvel", sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.resp-nav a:hover {
+    background-color: #09d5b0;
+}
+
+/* Navigation bar ends here */
+.header {
+    width: 100%;
+    background-color: #26425C;
+    text-align: center;
+    color: white;
+    padding: 20px 0px 20px;
+    font-family: 'Marvel', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background-color: #1c2833;
+}
+.blog{
+    margin: 30px 0px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 200px;
+}
+.blog-content{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+.blog-head{
+    display: flex;
+    width: 100%;
+}
+.title{
+    flex: 1;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+.date{
+    flex: 1;
+    text-align: right;
+    color: white;
+}
+.blog-body{
+   width: 90%;
+   margin-left: 50px;
+   font-size: 20px;
+   height: 230px;
+   overflow: scroll;
+   color: white;
+   text-align: justify;
+}
+.blog-content-container{
+    display: flex;
+}
+.comment-section{
+    flex: 1;
+    border: 1px solid white;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.btn{
+    background-color: #09d5b0;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.add-comment{
+    text-align: justify;
+    width: 90%;
+    margin: auto;
+}
+.add-comment input{
+    border: none;
+    width: 70%;
+    padding:  10px;
+    outline: none;
+}
+.comments{
+    overflow: scroll;
+    width: 90%;
+    max-height: 200px;
+    margin: auto;
+    border-bottom: 1px solid grey;
+    color: white;
+    margin-bottom: 10px;
+}
+.comment{
+    font-size: 15px;
+}
+.user-thumbnail{
+    display: inline-block; 
+    border: 1px solid white;
+    padding: 5px;
+}
+.img-container{
+    flex: 1;
+}
+.img-container img{
+    width: 100%;
+    border-radius: 5px;
+}
+.img-container i{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: #09d5b0;
+    cursor: pointer;
+}
+
+.ico i:hover {
+    cursor: pointer;
+}
+
+.footerlast {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    color: white;
+    font-family: "Maven Pro", "Marvel", sans-serif;
+    font-size: 12px;
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 896px) {
+
+    /* Navigation Bar */
+    .navigation {
+        display: none;
+    }
+
+    .brand {
+        flex: none;
+        margin-left: 30px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Ends here */
+    .container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .blog-card {
+        width: 100%;
+    }
+
+    .profile span {
+        display: none;
+    }
+}
