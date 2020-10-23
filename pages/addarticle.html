@@ -85,14 +85,14 @@
           .then(response => response.json())
           .then(data => {
             console.log('Success:', data);
+            alert("Successfully deployed " + data.title);
           })
           .catch((error) => {
             console.error('Error:', error);
           });
           });
 
-
-
+          form.reset();
     </script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first
