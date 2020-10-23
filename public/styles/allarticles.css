@@ -37,6 +37,41 @@ body {
     color: white;
 }
 
+li{
+    list-style: none;
+    border: 1px solid white;
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 5px;
+}
+li span{
+    margin-right: 30px;
+}
+
+#trashIcon{
+    text-align: right;
+    color: #FA657E;
+    transition: 0.3s;
+    cursor: pointer;
+}
+#trashIcon:hover{
+    transform: scale(1.2);
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* .thumbnail-holder {
     width: 100%;
     margin: auto;
@@ -69,7 +104,7 @@ p {
     display: inline-block;
 } */
 
-li{
+/* li{
     list-style: none;
     padding: 20px;
     border: 1px solid white;
@@ -89,5 +124,5 @@ li i{
 }
 .trashIcon:hover{
     transform: scale(1.2);
-}
+} */
 
