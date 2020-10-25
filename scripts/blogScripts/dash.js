@@ -14,5 +14,5 @@ deleteArticle.addEventListener("click", (e)=>{
 
 message.addEventListener("click", (e)=>{
     e.preventDefault();
-    frame.setAttribute("src","../msg.html");
+    frame.setAttribute("src","msg.html");
 })

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article</title>
+</head>
+<body>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Balsamiq+Sans:wght@700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Moment js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+
+    
+    <link rel="stylesheet" href="../public/styles/blogPage.css">
+</body>
+
+     <!-- Navigation bar code -->
+
+     <div class="nav-bar">
+        <div class="brand">KBM</div>
+        <div class="navigation">
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#about">About</a>
+          <a id="gotoBlog" href="../pages/signup.html">Blog</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="hamburger" id="ham">
+          <div class="hamb-line"></div>
+          <div class="hamb-line"></div>
+          <div class="hamb-line"></div>
+        </div>
+      </div>
+      <div class="resp-nav" id="respNavigation">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#about">About</a>
+        <a id="gotoBlog" href="../pages/signup.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+
+  <!-- Navigation bar code ends here -->
+
+
+
+
+
+      <!-- Blog container -->
+      <div class="blog-container">
+          <div class="article-holder">
+            <!-- <div class="article">
+                <div class="image"><img src="../public/images/programming.jpg" alt=""></div>
+                <div class="articleHead">
+                    <div class="title">LIFE WITH CODING</div>
+                    <div class="date">Added 10 days ago..</div>
+                    <div class="thumbnails">
+                        <i style="color: #DF376C;" class="far fa-heart "><span>12</span></i>
+                        <a href="#addComment"><i class="fas fa-comments "><span>5</span></i></a>
+                    </div>
+                </div>
+              </div>
+              <div class="articleBody">
+                  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+              </div> -->
+          </div>
+         <div class="comment-section">
+             <div id="comments" class="otherComments">
+                 <!-- <div class="comment">
+                    <div class="userThumbnail">
+                        <i style="color: white; font-size: 20px; margin-right: 10px;" class="fas fa-user"></i><span>Username</span>
+                     </div>
+                     <div class="body"><p>Nice comment</p></div>
+                 </div> -->
+             </div>
+             <div id="addComment" class="addComment">
+                 <form id="commentForm" action="POST">
+                     <input name="body" type="text" placeholder="Leave a comment" required>
+                     <button class="commentBtn" type="submit">Post</button>
+                 </form>
+             </div>
+         </div>
+
+
+      </div>
+
+
+
+<script src="../scripts/blogScripts/blogPage.js"></script>
+</html>

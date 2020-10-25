@@ -119,108 +119,64 @@ a {
     color: white;
     padding: 20px 0px 20px;
     font-family: 'Marvel', Arial, Helvetica, sans-serif;
+    margin-bottom: 50px;
 }
-
-.container {
+.container{
     width: 80%;
     margin: auto;
-    background-color: #1c2833;
-}
-.blog{
-    margin: 30px 0px 30px;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 200px;
+
+}
+.blog{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.blog-content-container{
+    width: 70%;
+    color: white;
+    background-color: #26425C;
+    border-radius: 10px;
+    border : 1px solid #8892b0;
+    min-height: 300px;
+    max-height: 800px;
 }
 .blog-content{
-    display: flex;
-    flex-direction: column;
-    flex: 2;
+    padding: 10px;
+}
+
+.img-container img{
+    width: 100%;
+    border-radius: 10px;
 }
 .blog-head{
     display: flex;
-    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 .title{
     flex: 1;
-    text-align: center;
-    color: white;
-    font-size: 20px;
+    text-align: left;
+    font-size: 25px;
 }
 .date{
     flex: 1;
     text-align: right;
-    color: white;
 }
-.blog-body{
-   width: 90%;
-   margin-left: 50px;
-   font-size: 20px;
-   height: 230px;
-   overflow: scroll;
-   color: white;
-   text-align: justify;
-}
-.blog-content-container{
-    display: flex;
-}
-.comment-section{
-    flex: 1;
-    border: 1px solid white;
+.iconsThumb{
+    margin-top: 20px;
     padding: 10px;
-    margin-top: 10px;
+}
+.iconsThumb span{
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.btn{
-    background-color: #09d5b0;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.add-comment{
-    text-align: justify;
-    width: 90%;
-    margin: auto;
-}
-.add-comment input{
-    border: none;
-    width: 70%;
-    padding:  10px;
-    outline: none;
-}
-.comments{
-    overflow: scroll;
-    width: 90%;
-    max-height: 200px;
-    margin: auto;
-    border-bottom: 1px solid grey;
-    color: white;
-    margin-bottom: 10px;
-}
-.comment{
-    font-size: 15px;
-}
-.user-thumbnail{
-    display: inline-block; 
-    border: 1px solid white;
-    padding: 5px;
-}
-.img-container{
-    flex: 1;
-}
-.img-container img{
-    width: 100%;
-    border-radius: 5px;
-}
-.img-container i{
-    font-size: 20px;
-    margin-top: 10px;
-    margin-right: 10px;
-    color: #09d5b0;
-    cursor: pointer;
-}
+
+
+
 
 .ico i:hover {
     cursor: pointer;
