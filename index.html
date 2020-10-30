@@ -214,7 +214,7 @@
       </div>
     </div>
     <div class="contact-form">
-      <form id="form" action="/" method="POST">
+      <form id="form" action="/messages" method="POST">
         Name:
         <input name="name" id="fname" type="text" autocomplete="off" pattern="[A-Za-z, ]{3,}" title="I'm sorry but that could not be your name!" required>
         Email:
@@ -231,87 +231,41 @@
   </div>
   <!-- Ends here -->
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
-    authDomain: "my-portfolio-53f39.firebaseapp.com",
-    databaseURL: "https://my-portfolio-53f39.firebaseio.com",
-    projectId: "my-portfolio-53f39",
-    storageBucket: "my-portfolio-53f39.appspot.com",
-    messagingSenderId: "544508778619",
-    appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
-    measurementId: "G-9RLF5K1H1C"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  const db = firebase.firestore();
-  const auth = firebase.auth();
-</script>
+ 
 <script src="index.js"></script>
-<!-- <script>
-    let blogButton = document.getElementById("gotoBlog");
-    let logoutBtn = document.getElementById("logoutBtn");
-    auth.onAuthStateChanged(user => {
-    if(user){
-      console.log("Logged in as : " + user.displayName);
-      logoutBtn.innerText = "Logout";
-      document.getElementById("nameDisplay").innerText = user.displayName;
-      blogButton.setAttribute("href","file:///C:/Users/TDE_KBM/Desktop/Programming/Andela/UI/Blog/blog");
-    }else{
-      console.log("Logged out");
-      logoutBtn.innerText = "Login";
-      logoutBtn.setAttribute("onclick","window.location.href='signin'")
-      document.getElementById("nameDisplay").style.display === "none";
-      blogButton.setAttribute("href","signup");
-    }
-  });
+<script>
 
-  logoutBtn.addEventListener("click", (e)=>{
-    e.preventDefault();
-    auth.signOut().then(()=>{
-      location.reload();
-     })
-  })
+      let form = document.getElementById('form');
+
+      function sendingMessage (data) {
+            return fetch('http://localhost:3000/messages' , {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json;charset=utf-8'
+              
+            },
+            body: JSON.stringify(data)
+            }).then(response => response.json());
+      }
+
+      form.addEventListener('submit' , (e) => {
+          e.preventDefault();
+          let data = {
+            name : form.name.value,
+            email : form.email.value,
+            message : form.message.value
+          }
+          async function messageConfirmation () {
+            const response = await sendingMessage(data);
+            alert(response.Message);
+            form.reset();
+          }
+
+          messageConfirmation();
+      });
 
 
-  let date = new Date();
-  let options = {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-    };
-  dateToday = date.toLocaleDateString("en-US",options);
-  let formm = document.getElementById("form");
-  formm.addEventListener("submit",(e)=>{
-      e.preventDefault();
-      db.collection("Messages").add({
-      Name: form.name.value,
-      Email:form.email.value,
-      Message:form.message.value,
-      Date: dateToday
-    }).then(()=>{
-        alert("Message sent!")
-        form.name.value = "";
-        form.email.value = "";
-        form.message.value = "";
-    })
-    .catch((error)=>{
-      alert(err);
-    })
-    })
-</script> -->
+</script>
 </body>
 
 </html>

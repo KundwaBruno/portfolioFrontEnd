@@ -25,7 +25,7 @@ async function showArticle () {
         <div class="date">Posted ${moment(article.date).fromNow()}</div>
         <div class="thumbnails">
             <i style="color: #DF376C;" class="far fa-heart "><span>12</span></i>
-            <a href="#addComment"><i class="fas fa-comments "><span>5</span></i></a>
+            <a href="#addComment"><i class="fas fa-comments "><span>${article.comments.length}</span></i></a>
         </div>
     </div>
   </div>
