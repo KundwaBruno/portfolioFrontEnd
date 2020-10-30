@@ -48,13 +48,14 @@
         </div>
         <div id="deleteArticle" class="options">
           <i class="far fa-newspaper"></i> Articles
+          <span class="counter" id="articleCounter">0</span>
         </div>
         <div id="editArticle" class="options">
           <i class="fas fa-edit"></i> Edit
         </div>
         <div id="viewMessages" class="options">
           <i class="fas fa-comment"></i> Messages
-          <!-- <span id="counter">0</span> -->
+          <span class="counter" id="messageCounter">0</span>
         </div>
       </div>
       <div class="footerlast">
@@ -74,34 +75,29 @@
         </form>
       </div>
       <div class="blog-searched">
+
+        
         <iframe id="frame" src="addarticle.html"></iframe>
-        <!-- <div class="blog-card">
-          <div class="image"><img src="../images/programming.jpg" alt="programming"></div>
-          <div class="text">
-            <div class="header-text">
-              <div style="flex: 1;">
-                <span style="font-size: 20px; font-weight: bolder;">BLOG TITLE</span>
-              </div>
-              <div style="flex: 1; text-align: center;"><span>11/9/2020</span></div>
-            </div>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-              and scrambled it to make a type specimen book.</p>
-          </div>
-          <div class="footer">
-            <div class="ico">
-              <i class="fas fa-thumbs-up"></i><span> 12</span>
-              <i class="fas fa-thumbs-down"></i><span> 3</span>
-              <i class="fas fa-comment"></i><span> 8</span>
-            </div>
-            <div class="profile">
-              <i class="far fa-user-circle"></i><span> Kundwa Bruno</span>
-            </div>
-          </div>
-        </div> -->
+
+
       </div>
     </div>
   </div>
+  <script>
+
+
+    let articleCounter = document.getElementById('articleCounter');
+    let messageCounter = document.getElementById('messageCounter');
+
+
+    fetch('https://kundwabruno-portfolio.herokuapp.com/articles').then(response => response.json()).then(data =>
+     articleCounter.textContent = data.length);
+    fetch('https://kundwabruno-portfolio.herokuapp.com/messages').then(response => response.json()).then(data => 
+      messageCounter.textContent = data.length);
+
+
+
+  </script>
   <script src="../scripts/blogScripts/dash.js"></script>
 </body>
 

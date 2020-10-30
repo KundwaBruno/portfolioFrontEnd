@@ -58,6 +58,20 @@ li span{
     transform: scale(1.2);
 } 
 
+#editIcon{
+    text-align: right;
+    padding: 7px;
+    border-radius: 50%;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: teal;
+}
+
+#editIcon:hover {
+    transform: scale(1.2);
+}
+
 
 
 

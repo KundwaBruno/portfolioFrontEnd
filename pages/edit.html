@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marvel:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Balsamiq+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="../public/styles/addarticle.css" />
+    <title>Add article</title>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div style="border: 1px solid white; padding: 30px; border-radius: 10px;" class="blog-add">
+        <form class="editArticle" id="addArticle" action="/articles" method="POST">
+          Image URL:<br/>
+        <input type="text" name="image" placeholder="Add image url">
+          Date:<br />
+        <input name="date" type="text" autocomplete="off" placeholder="Date created" />
+        Title:<br />
+        <input name="title" type="text" autocomplete="off" placeholder="Add article title" />
+        content:<br />
+        <textarea name="description" id="editor" rows="10" cols="80">
+      </textarea>
+        <button type="submit" class="btn">Post</button>
+        </form>
+      </div>
+    </div>
+
+    <script>  
+    let editForm = document.getElementsByClassName('editArticle')[0];
+    const articleId = location.href.split('?id=')[1];
+
+    function getArticleToEdit () {
+        return fetch ('https://kundwabruno-portfolio.herokuapp.com/articles/' + articleId).then(repsonse => repsonse.json());
+    }
+
+    async function renderInFields () {
+        console.log('Getting The article');
+        const article = await getArticleToEdit ();
+        editForm.image.value = article.image;
+        editForm.date.value = article.date;
+        editForm.title.value = article.title;
+        editForm.description.value = article.description;
+    }
+    
+    renderInFields();
+
+    function editArticle (data) {
+        return fetch ('https://kundwabruno-portfolio.herokuapp.com/articles/' + articleId , {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+        }).then(repsonse => repsonse.json()).then();
+    }
+
+    editForm.addEventListener('submit' , (e) => {
+        e.preventDefault();
+        let data = {
+            image : editForm.image.value,
+            date : editForm.date.value,
+            title : editForm.title.value,
+            description : editForm.description.value
+        }
+        async function submitEdit () {
+          try{
+            const editResponse = await editArticle(data);
+            console.log(editResponse);
+          }catch(err){
+            console.log(err);
+          }
+        }
+
+        submitEdit();
+    })
+
+    </script>
+
+  
+<script src="/scripts/blogScripts/addarticle.js"></script>
+  </body>
+</html>

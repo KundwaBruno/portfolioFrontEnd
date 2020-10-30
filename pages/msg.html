@@ -18,60 +18,27 @@
 
     <!-- JQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="msg.css">
+
+    <!-- Moment js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="../public/styles/msg.css">
     <title>Messages</title>
 </head>
 
 <body>
     <div class="main-container">
-        <ul class="article-container" id="article-thumbnails">
-            
-        </ul>
-        <!-- <div class="thumbnail-holder">
-            <div class="blog-thumbnail">
-                <div style="text-align: center;"><input type="checkbox"></div>
-                <div><span id="articleNumber"></span> 1. </div>
-                <div>
-                    <h3>ARTICLE TITLE</h3>
-                </div>
-                <div><span>12/11/2020</span></div>
-                <div>
-                    <i class="fas fa-thumbs-up"></i><span> 12</span>
-                    <i class="fas fa-thumbs-down"></i><span> 3</span>
-                    <i class="fas fa-comment"></i><span> 8</span>
-                </div>
-            </div>
+        <!-- <div class="message-container">
+            <div class="triangle"></div>
+            <div class="name">Kundwa Bruno Materne</div>
+            <div class="message">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod amet, at eveniet numquam possimus delectus distinctio ducimus nulla ullam. Suscipit sequi fuga reiciendis, adipisci soluta in vero iste quia incidunt.</div>
+            <div class="date">10 minutes ago</div>
         </div> -->
     </div>
 
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
-    authDomain: "my-portfolio-53f39.firebaseapp.com",
-    databaseURL: "https://my-portfolio-53f39.firebaseio.com",
-    projectId: "my-portfolio-53f39",
-    storageBucket: "my-portfolio-53f39.appspot.com",
-    messagingSenderId: "544508778619",
-    appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
-    measurementId: "G-9RLF5K1H1C"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  const db = firebase.firestore();
-</script>
-<script src="msg.js"></script>
+<script src="../scripts/msg.js"></script>
 </body>
 
 </html>

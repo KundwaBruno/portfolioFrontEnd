@@ -30,7 +30,7 @@ async function renderInBrowser() {
             </div>
             <div class="iconsThumb">
             <i style="color: #DF376C;" class="far fa-heart "><span>12</span></i>
-            <i class="fas fa-comments "><span>12</span></i>
+            <i class="fas fa-comments "><span>${element.comments.length}</span></i>
             </div>
         </div> 
     </div>`;
