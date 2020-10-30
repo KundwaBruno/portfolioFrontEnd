@@ -3,7 +3,7 @@ let messageContainer = document.getElementsByClassName('main-container')[0];
 console.log(messageContainer);
 
 function getMessages () {
-    return fetch('http://localhost:3000/messages').then(response => response.json());
+    return fetch('https://kundwabruno-portfolio.herokuapp.com/messages').then(response => response.json());
 }
 
 async function renderMessages () {
