@@ -45,7 +45,7 @@
   <body>
     <div class="main-container">
       <div style="border: 1px solid white; padding: 30px; border-radius: 10px;" class="blog-add">
-        <form class="editArticle" id="addArticle" action="/articles" method="POST">
+        <form class="editArticle" id="addArticle" action="/articles" method="PATCH">
           Image URL:<br/>
         <input type="text" name="image" placeholder="Add image url">
           Date:<br />
@@ -80,13 +80,13 @@
     renderInFields();
 
     function editArticle (data) {
-        return fetch ('https://kundwabruno-portfolio.herokuapp.com/articles/' + articleId , {
+        return fetch ('http://localhost:3000/articles/' + articleId , {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
-        }).then(repsonse => repsonse.json()).then();
+        body: data
+        }).then(repsonse => repsonse.json())
     }
 
     editForm.addEventListener('submit' , (e) => {
