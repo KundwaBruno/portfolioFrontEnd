@@ -56,7 +56,7 @@ firebase.auth().onAuthStateChanged(user => {
         let data = {
             username : user.displayName
         }
-        const status = await fetch(`https://kundwabruno-portfolio.herokuapp/articles/${articleId}/likes/status` ,
+        const status = await fetch(`https://kundwabruno-portfolio.herokuapp.com/articles/${articleId}/likes/status` ,
          {
          method : 'POST' ,
          headers: {
