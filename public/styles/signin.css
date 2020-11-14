@@ -106,23 +106,42 @@ a {
 
 /* Navigation bar ends here */
 
+#logBtn{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:  #303C55;
+    padding: 10px;
+    font-size: 15px;
+    text-transform: capitalize;
+    border: 1px solid white;
+    font-weight: lighter;
+  }
+  
+  #logBtn:hover{
+    background-color:  #26425c;
+    color: white;
+  }
+
 
 .main {
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .form-container {
     width: 30%;
     margin: auto;
     text-align: center;
-    background-color: #26425C;
+    background-color:  #303C55;
     color: white;
     border-radius: 10px;
     padding: 30px 0px 30px;
     font-family: "Maven", Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .form-container i {
@@ -131,27 +150,29 @@ a {
     border-radius: 50%;
     padding: 20px;
     margin-bottom: 30px;
+    background-color:  #26425c;
 }
 
 input {
 
     padding: 10px;
     border: none;
-    border-radius: 7px;
+    border-radius: 2px;
     margin-bottom: 20px;
     outline: none;
+    width: 250px;
 }
 
 .btn {
     margin-top: 30px;
     font-size: 20px;
-    font-family: "Marvel", sans-serif;
-    width: 100px;
-    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 200px;
+    background-color: #303C55;
     color: white;
     padding: 10px;
-    border: 2px solid white;
-    border-radius: 10px;
+    border: 1px solid white;
+    border-radius: 2px;
     transition: 0.3s;
 }
 
@@ -180,7 +201,7 @@ input {
     font-family: "Maven Pro", "Marvel", sans-serif;
     font-size: 12px;
     margin-top: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 896px) {

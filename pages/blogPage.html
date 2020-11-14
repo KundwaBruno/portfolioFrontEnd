@@ -37,6 +37,7 @@
           <a href="../index.html#about">About</a>
           <a id="gotoBlog" href="../pages/signup.html">Blog</a>
           <a href="../index.html#contact">Contact</a>
+          <a id="logBtn" href="./pages/signin.html"></a>
         </div>
         <div class="hamburger" id="ham">
           <div class="hamb-line"></div>
@@ -59,6 +60,7 @@
 
       <!-- Blog container -->
       <div class="blog-container">
+        <div id="loader"><div class="loading"></div></div>
           <div class="article-holder">
             <!-- <div class="article">
                 <div class="image"><img src="../public/images/programming.jpg" alt=""></div>
@@ -86,7 +88,7 @@
              </div>
              <div id="addComment" class="addComment">
                  <form id="commentForm" action="POST">
-                     <input name="body" type="text" placeholder="Leave a comment" required>
+                     <input name="body" type="text" placeholder="Leave a comment" autocomplete="off" required>
                      <button class="commentBtn" type="submit">Post</button>
                  </form>
              </div>
@@ -95,6 +97,35 @@
 
       </div>
 
+      <!-- Firebase scripts of Authantication -->
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+            <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
+                authDomain: "my-portfolio-53f39.firebaseapp.com",
+                databaseURL: "https://my-portfolio-53f39.firebaseio.com",
+                projectId: "my-portfolio-53f39",
+                storageBucket: "my-portfolio-53f39.appspot.com",
+                messagingSenderId: "544508778619",
+                appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
+                measurementId: "G-9RLF5K1H1C"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+            firebase.auth();
+            </script>
+
+      <script src="../scripts/userStatus.js"></script>
       <script src="../scripts/index.js"></script>
       <script src="../scripts/blogScripts/blogPage.js"></script>
 </html>

@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -40,12 +41,12 @@ a {
 .navigation {
   flex: 3;
   text-align: right;
-  font-family: "Marvel", sans-serif;
-  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
 }
 
 .navigation a {
-  margin-right: 80px;
+  margin-right: 50px;
   color: white;
   text-decoration: none;
   transition: 0.3s;
@@ -139,13 +140,13 @@ a {
 
 .btn {
   font-size: 20px;
-  font-family: "Marvel", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   width: 140px;
   background-color: transparent;
   color: white;
   padding: 10px;
-  border: 2px solid white;
-  border-radius: 5px;
+  border: 1px solid white;
+  border-radius: 2px;
   transition: 0.3s;
 }
 
@@ -165,7 +166,25 @@ a {
   font-size: 4rem;
   opacity: 100%;
   font-family: "Balsamiq Sans", cursive;
+  color: white;
 }
+
+.logBtn{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:  #303C55;
+  padding: 10px;
+  font-size: 15px;
+  text-transform: capitalize;
+  border: 1px solid white;
+  border-radius: 3px;
+  font-weight: lighter;
+}
+
+.logBtn:hover{
+  background-color:  #26425c;
+  color: white;
+}
+
 
 /* Home page ends here */
 
@@ -182,6 +201,7 @@ a {
   font-size: 3rem;
   font-family: "Balsamiq Sans", cursive;
   margin-bottom: 100px;
+  opacity: 0.9;
 }
 
 h2 {
@@ -190,11 +210,13 @@ h2 {
 
 .about-description {
   flex: 1;
+  opacity: 0.8;
 }
 
 .about-paragraph {
-  font-family: "Maven Pro", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   width: 100%;
+  opacity: 0.8;
 }
 
 .profile-picture {
@@ -229,7 +251,7 @@ h2 {
 
 .pro-container li {
   margin-bottom: 10px;
-  font-family: "Maven Pro", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   list-style: none;
 }
 
@@ -263,7 +285,7 @@ li:before {
 }
 
 .built h1 {
-  font-family: "Balsamiq Sans", cursive;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 3rem;
 }
 
@@ -284,7 +306,7 @@ li:before {
   background-color: #26425c;
   opacity: 80%;
   text-align: center;
-  font-family: "Marvel", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -306,11 +328,11 @@ li:before {
   width: 80%;
   margin: auto;
   display: flex;
-  font-family: "Maven Pro", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin-top: 150px;
+  opacity: 0.7;
 }
 
-.contact-description p {}
 
 .dev-info {
   flex: 1;
@@ -358,8 +380,8 @@ li:before {
   width: 300px;
   height: 30px;
   background: none;
-  border: 2px solid white;
-  border-radius: 4px;
+  border: 1px solid white;
+  border-radius: 2px;
   color: white;
   outline: none;
 }
@@ -370,8 +392,8 @@ li:before {
   width: 300px;
   height: 30px;
   background: none;
-  border: 2px solid white;
-  border-radius: 4px;
+  border: 1px solid white;
+  border-radius: 2px;
   color: white;
   outline: none;
 }
@@ -381,10 +403,71 @@ li:before {
   margin-bottom: 30px;
   width: 300px;
   background: none;
-  border: 2px solid white;
-  border-radius: 4px;
+  border: 1px solid white;
+  border-radius: 2px;
   color: white;
   outline: none;
+}
+
+:root {
+  --s-loader-wrapper-bg-color: rgb(21, 22, 43);
+  --s-loader-width: 17px;
+  --s-loader-height: var(--s-loader-width);
+  --s-loader-border-color-trans: rgba(29, 161, 242, 0.2);
+  --s-loader-border-color-full: #09d5b0;
+}
+
+#loader {
+  margin: 0;
+  background: transparent;
+  /* height: 14vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  display: inline-block;
+  margin-left: 10px;
+  display: none;
+ 
+}
+
+
+.loading{
+width: var(--s-loader-width);
+height: var(--s-loader-height);
+border: 3px solid var(--s-loader-border-color-trans);
+border-left-color: var(--s-loader-border-color-full);
+border-radius: 50%;
+background: transparent;
+animation-name: rotate-s-loader;
+animation-iteration-count: infinite;
+animation-duration: 1s;
+animation-timing-function: linear;
+position: relative;
+}
+
+@keyframes rotate-s-loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+#feedback{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #74AD59;
+}
+
+#sendBtn{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid white;
 }
 
 .footer {

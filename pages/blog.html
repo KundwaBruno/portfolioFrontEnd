@@ -36,6 +36,7 @@
           <a href="../index.html#about">About</a>
           <a id="gotoBlog" href="../pages/signup.html">Blog</a>
           <a href="../index.html#contact">Contact</a>
+          <a id="logBtn" href=""></a>
         </div>
         <div class="hamburger" id="ham">
           <div class="hamb-line"></div>
@@ -57,8 +58,8 @@
             contributing to my Blog, Thanks :)</p>
     </div>
 
-
     <div class="container">
+        <div id="loader"><div class="loading"></div></div>
          <!-- <div class="blog">
             <div class="blog-content-container">
                 <div class="img-container">
@@ -110,19 +111,23 @@
         <p><span style="opacity: 50%;">Designed and Built by </span>Kundwa Bruno</p>
         <p style="opacity: 50%;">&copy; 2020-2021</p>
     </div>
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<!-- <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script> -->
+    
+
+    <script src="../scripts/index.js"></script>
+
+    <!-- Firebase CDN and Authentication -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<!-- <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
 
-<!-- <script> -->
-  <!-- // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional -->
-  <!-- var firebaseConfig = {
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
     apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
     authDomain: "my-portfolio-53f39.firebaseapp.com",
     databaseURL: "https://my-portfolio-53f39.firebaseio.com",
@@ -131,42 +136,23 @@
     messagingSenderId: "544508778619",
     appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
     measurementId: "G-9RLF5K1H1C"
-  }; -->
-  <!-- // Initialize Firebase -->
-  <!-- firebase.initializeApp(firebaseConfig);
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-  const auth = firebase.auth();
-  const db = firebase.firestore();
-</script> -->
-<!-- <script>
-    let blogButton = document.getElementById("gotoBlog");
-    let logoutBtn = document.getElementById("logoutBtn");
-    auth.onAuthStateChanged(user => {
-    if(user){
-      console.log("Logged in as : " + user.displayName);
-      console.log(user);
-      document.getElementById("welcome").textContent = "Welcome " + user.displayName + "!";
-      logoutBtn.innerText = "Logout";
-      document.getElementById("nameDisplay").innerText = user.displayName;
-      blogButton.setAttribute("href","file:///C:/Users/TDE_KBM/Desktop/Programming/Andela/UI/Blog/blog.html");
-    }else{
-      console.log("Logged out");
-      logoutBtn.innerText = "Login";
-      logoutBtn.setAttribute("onclick","window.location.href='../signin.html'")
-      document.getElementById("nameDisplay").style.display === "none";
-      blogButton.setAttribute("href","../index.html");
-    }
-  });
+  firebase.auth();
+</script>
+<script src="../scripts/blogScripts/renderArticles.js"></script>
+<script src="../scripts/userStatus.js"></script>
+<script>
 
-  logoutBtn.addEventListener("click", (e)=>{
-    e.preventDefault();
-    auth.signOut().then(()=>{
-      location.reload();
-     })
-  })
-</script> -->
-    <script src="../scripts/index.js"></script>
-    <script src="../scripts/blogScripts/renderArticles.js"></script>
+    firebase.auth().onAuthStateChanged(function(user) {
+        if(!user){
+            window.location.replace('../pages/signin.html');
+        }
+    });
+    
+    </script>
 </body>
 
 </html>
