@@ -109,11 +109,26 @@ a {
     background-color: #09d5b0;
 }
 
+#logBtn{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:  #303C55;
+    padding: 10px;
+    font-size: 15px;
+    text-transform: capitalize;
+    border: 1px solid white;
+    font-weight: lighter;
+  }
+  
+  #logBtn:hover{
+    background-color:  #26425c;
+    color: white;
+  }
+
 /* Navigation bar ends here */
 
 .main-container {
     width: 100%;
-    height: 90vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,20 +139,23 @@ a {
     text-align: center;
     color: white;
     margin-bottom: 50px;
-    font-family: "Balsamiq Sans", cursive;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.8;
 }
 
 .description p {
-    font-family: Marvel, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
 }
 
 .form-container {
     position: relative;
     display: flex;
-    width: 60%;
+    width: 50%;
     height: 50%;
     padding: 30px;
-    border: 2px solid #09d5b0;
+    border: 2px solid #8892b0;
+    background-color:  #303C55;
     border-radius: 10px;
 }
 
@@ -151,23 +169,23 @@ a {
 
 .icon-holder i {
     font-size: 200px;
-    color: white;
+    color: #8892b0;
 }
 
 .form {
     flex: 1;
     text-align: center;
     font-family: "Maven Pro", "Marvel", sans-serif;
+    margin-left: 25px;
 }
 
 input {
     width: 300px;
     padding: 10px;
-    border-radius: 5px;
-    background: none;
-    border: 2px solid white;
+    border-radius: 2px;
+    border: 1px solid white;
     outline: none;
-    color: white;
+    color: black;
     margin-bottom: 20px;
 }
 
@@ -175,16 +193,19 @@ input {
     width: 135px;
 }
 
+
+
 .btn {
     margin-top: 30px;
     font-size: 20px;
-    font-family: "Marvel", sans-serif;
-    width: 140px;
-    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    /* width: 120px; */
+    width: 85%;
+    background-color: #303C55;
     color: white;
     padding: 10px;
-    border: 2px solid white;
-    border-radius: 5px;
+    border: 1px solid white;
+    border-radius: 2px;
     transition: 0.3s;
 }
 
@@ -197,12 +218,16 @@ input {
 #already {
     display: block;
     margin-top: 10px;
-    color: white
+    font-size: 13px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.8;
 }
 
 #already a {
     color: #09d5b0;
     text-decoration: teal;
+    text-decoration: underline;
 }
 
 .footer {
@@ -210,10 +235,11 @@ input {
     width: 80%;
     margin: auto;
     color: white;
-    font-family: "Maven Pro", "Marvel", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-    margin-top: 150px;
+    margin-top: 80px;
     margin-bottom: 30px;
+    opacity: 0.8;
 }
 
 .message {

@@ -28,8 +28,9 @@
     <div class="navigation">
       <a href="../index.html#home">Home</a>
       <a href="../index.html#about">About</a>
-      <a id="gotoBlog" href="../pages/signup.html">Blog</a>
+      <a id="gotoBlog" href="">Blog</a>
       <a href="../index.html#contact">Contact</a>
+      <a id="logBtn" href=""></a>
     </div>
     <div class="hamburger" id="ham">
       <div class="hamb-line"></div>
@@ -49,12 +50,14 @@
         <div class="form-container">
             <i class="fas fa-user"></i>
             <form id="signin-form" method="POST">
-                <input name="email" id="signin-email" type="email" placeholder="Email" autocomplete="off" required><br>
-                <input name="password" id="signin-password" type="password" placeholder="Password" autocomplete="off" required><br>
+              <p>Login with your account.</p>
+                <input name="email" id="signin-email" type="text" placeholder="Email" autocomplete="off" required><br>
+                <input style="margin-bottom: 0px;" name="password" id="signin-password" type="password" placeholder="Password" autocomplete="off" required><br>
+                <span style="font-size: 12px; color: #CD6155; text-align: justify;" id="errorMessage"></span><br>
                 <button class="btn" type="submit">Log in</button>
-                <span style="display: block; font-size: 15px;" id="already">Don't have an account? <a
+                <span style="display: block; font-size: 13px;" id="already">Don't have an account? <a
                         href="../pages/signup.html">Sign
-                        Up</a></span>
+                        up Now</a></span>
             </form>
         </div>
     </div>
@@ -65,102 +68,57 @@
         <p style="opacity: 50%">&copy; 2020-2021</p>
     </div>
 
+<script src="../scripts/index.js"></script>
 
+          <!-- Firebase CDN Initialization -->
 
-
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<!-- <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script> -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<!-- <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
 
-<script> -->
-  <!-- // Your web app's Firebase configuration
+<script>
+  // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-//   var firebaseConfig = {
-//     apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
-//     authDomain: "my-portfolio-53f39.firebaseapp.com",
-//     databaseURL: "https://my-portfolio-53f39.firebaseio.com",
-//     projectId: "my-portfolio-53f39",
-//     storageBucket: "my-portfolio-53f39.appspot.com",
-//     messagingSenderId: "544508778619",
-//     appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
-//     measurementId: "G-9RLF5K1H1C"
-//   };
-//   // Initialize Firebase
-//   firebase.initializeApp(firebaseConfig);
-//   firebase.analytics();
-//   const auth = firebase.auth();
-//   const db = firebase.firestore(); -->
-<!-- </script>
-<script> -->
-<!-- //     let blogButton = document.getElementById("gotoBlog");
-//     let logoutBtn = document.getElementById("logoutBtn");
-//   auth.onAuthStateChanged(user => {
-//     if(user && user.email === "kundwabruno@gmail"){
-//         location.replace("file:///C:/Users/TDE_KBM/Desktop/Programming/Andela/UI/Blog/blogDashboard.html");
-//         console.log(user.password);
-//       }
-//     else if(user){
-//       console.log("Logged in as : " + user.displayName);
-//       console.log(user);
-//       logoutBtn.innerText = "Logout";
-//       document.getElementById("nameDisplay").innerText = user.displayName;
-//       blogButton.setAttribute("href","file:///C:/Users/TDE_KBM/Desktop/Programming/Andela/UI/Blog/blog.html"); -->
-<!-- //     }else{
-//       console.log("Logged out");
-//       logoutBtn.innerText = "Signup";
-//       logoutBtn.setAttribute("onclick","window.location.href='signup.html'")
-//       document.getElementById("nameDisplay").style.display === "none";
-//       blogButton.setAttribute("href","signup.html");
-//     }
-//   });
+  var firebaseConfig = {
+    apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
+    authDomain: "my-portfolio-53f39.firebaseapp.com",
+    databaseURL: "https://my-portfolio-53f39.firebaseio.com",
+    projectId: "my-portfolio-53f39",
+    storageBucket: "my-portfolio-53f39.appspot.com",
+    messagingSenderId: "544508778619",
+    appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
+    measurementId: "G-9RLF5K1H1C"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  firebase.auth();
+</script>
 
-//   logoutBtn.addEventListener("click", (e)=>{
-//     e.preventDefault();
-//     auth.signOut().then(()=>{ -->
-<!-- //       location.reload();
-//      })
-//   }) -->
-<!-- // </script> -->
-<!-- <script src="index.js"></script> -->
 <script>
 
-  let loginForm = document.getElementById('signin-form');
+  const loginForm = document.getElementById('signin-form');
 
-   function login (data) {
-    return fetch('https://kundwabruno-portfolio.herokuapp.com/users/login' , {
-    method: 'POST', 
-    headers: {
-      'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: JSON.stringify(data) 
-  }).then(response => response.json())
-  }
-
-  loginForm.addEventListener('submit' , (e) => {
+  loginForm.addEventListener('submit' , (e)=> {
     e.preventDefault();
-    async function authentication () {
-
-    let data = {
-      email : loginForm.email.value,
-      password : loginForm.password.value
-    }
-
-    const response = await login(data);
-    console.log(response.message);
-  }
-
-  authentication();
-  });
-
-
+    firebase.auth().signInWithEmailAndPassword(loginForm.email.value, loginForm.password.value).then( () => {
+        location.replace('../pages/blog.html');
+    } ).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      document.getElementById('errorMessage').textContent = errorMessage;
+    });
+  })
+  
+  
 
 </script>
+<script src="../scripts/userStatus.js"></script>
+
 </body>
 
 </html>

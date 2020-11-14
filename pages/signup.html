@@ -30,6 +30,7 @@
       <a href="../index.html#about">About</a>
       <a id="gotoBlog" href="../pages/signup.html">Blog</a>
       <a href="../index.html#contact">Contact</a>
+      <a id="logBtn" href=""></a>
     </div>
     <div class="hamburger" id="ham">
       <div class="hamb-line"></div>
@@ -47,12 +48,13 @@
   <!-- Navigation bar code ends here -->
   <div class="main-container">
     <div class="description">
-      <h1>_Sign up now!</h1>
-      <p>
+      <h1>CREATE YOUR NEW ACCOUNT!</h1>
+      <!-- <p>
         By signing up,<br />You will be able to check my blog posts<br />And
         also add to my blogs,<br />You will also be signing up for my
         NewsLtter.
-      </p>
+      </p> -->
+      <p>Create your free account now to start contributing to this portfoilio's Blog! <span id="already">Already have an account? <a href="../pages/signin.html">Sign in!</a></span></p><br>
     </div>
     <div id="errorMessage" class="message"></div>
     <div class="form-container">
@@ -62,13 +64,13 @@
       <div class="form">
         <form action="/users" id="signupForm" method="POST">
           <div class="names">
-            <input name="firstname" id="fname" type="text" placeholder="First Name" autocomplete="off" pattern="[A-Za-z, ]{3,}" title="I'm sorry but that could not be your name!" required />
-            <input name="secondname" id="lname" type="text" placeholder="Last Name" autocomplete="off" pattern="[A-Za-z, ]{3,}" title="I'm sorry but that could not be your name!" required />
+            <input name="firstname" id="fname" type="text" placeholder="First Name" autocomplete="off" pattern="[A-Za-z, ]{3,}" title="Names must be atleast three characters or more" required />
+            <input name="secondname" id="lname" type="text" placeholder="Last Name" autocomplete="off" pattern="[A-Za-z, ]{3,}" title="Names must be atleast three characters or more"  required />
           </div>
           <input name="email" id="signup-email" type="email" placeholder="Valid Email" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please Enter a valid Email" required /><br />
           <input name="password" id="signup-password" type="password" placeholder="Create password" autocomplete="off" pattern=".{8,}" title="Your password must be six characters or more!" required /><br />
-          <button id="submitBtn" type="submit" class="btn">Sign up</button>
-          <span id="already">Already have an account? <a href="../pages/signin.html">Sign In</a></span>
+          <span id="already">By submitting this form you agree to the <a href="#">Terms of service</a></span>
+          <button id="submitBtn" type="submit" class="btn">Register</button>
         </form>
       </div>
     </div>
@@ -84,59 +86,52 @@
 
 
 
-
-
-
   <!-- //MongoDb scripts -->
   <script>
-        let form = document.getElementById('signupForm');
+        // let form = document.getElementById('signupForm');
 
-              // fetch('http://localhost:3000/').then(response => {
-              //   response.json()
-              // }).then(data => {
-              //   console.log(data);
-              // });
-
-              form.addEventListener('submit' , function (e){
-                e.preventDefault();
-                let data = {
-                  firstname : form.firstname.value,
-                  secondname : form.secondname.value,
-                  email : form.email.value,
-                  password : form.password.value
-                };
-                fetch('https://kundwabruno-portfolio.herokuapp.com/users', {
-                method: 'POST', 
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-              })
-              .then(response => response.json())
-              .then(data => {
-                console.log('Success:', data);
-                alert("Successfully signup");
-                window.location.replace('../pages/blog.html');
-              })
-              .catch((error) => {
-                console.error('Error:', error);
-              });
-              });
+        //       form.addEventListener('submit' , function (e){
+        //         e.preventDefault();
+        //         let data = {
+        //           firstname : form.firstname.value,
+        //           secondname : form.secondname.value,
+        //           email : form.email.value,
+        //           password : form.password.value
+        //         };
+        //         fetch('http://localhost:3000/users', {
+        //         method: 'POST', 
+        //         headers: {
+        //           'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify(data),
+        //       })
+        //       .then(response => response.json())
+        //       .then(data => {
+        //         console.log('Success:', data);
+        //         alert("Successfully signup");
+        //         window.location.replace('../pages/blog.html');
+        //       })
+        //       .catch((error) => {
+        //         console.error('Error:', error);
+        //       });
+        //       });
   </script>
 
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<!-- <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script> -->
+
+  <!-- Firebase CDN and authentication -->
+  <!-- Firebase Authentication -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<!-- <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
 
-<!-- <script> -->
-  <!-- // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional -->
-  <!-- var firebaseConfig = {
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
     apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
     authDomain: "my-portfolio-53f39.firebaseapp.com",
     databaseURL: "https://my-portfolio-53f39.firebaseio.com",
@@ -145,41 +140,35 @@
     messagingSenderId: "544508778619",
     appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
     measurementId: "G-9RLF5K1H1C"
-  }; -->
-  <!-- // Initialize Firebase
+  };
+  // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-  const auth = firebase.auth();
-  const db = firebase.firestore();
+  firebase.auth();
 </script>
-<script>
-    let blogButton = document.getElementById("gotoBlog");
-    let logoutBtn = document.getElementById("logoutBtn");
-  auth.onAuthStateChanged(user => {
-    if(user){
-      console.log("Logged in as : " + user.displayName);
-      logoutBtn.innerText = "Logout";
-      document.getElementById("nameDisplay").innerText = user.displayName;
-      blogButton.setAttribute("href","file:///C:/Users/TDE_KBM/Desktop/Programming/Andela/UI/Blog/blog");
-    }else{
-      console.log("Logged out");
-      logoutBtn.innerText = "Login";
-      logoutBtn.setAttribute("onclick","window.location.href='signin'")
-      document.getElementById("nameDisplay").style.display === "none";
-      blogButton.setAttribute("href","signup.html");
-    }
-  });
 
-  logoutBtn.addEventListener("click", (e)=>{
-    e.preventDefault();
-    auth.signOut().then(()=>{
-      location.reload();
-     })
-  })
-</script> -->
-<script src="/scripts/auth.js"></script>
-  <!-- <script src="form.js"></script>
-  <script src="index.js"></script> -->
+  <script>
+
+        let signupForm = document.getElementById('signupForm');
+
+        signupForm.addEventListener('submit' , (e)=>{
+          e.preventDefault();
+            firebase.auth().createUserWithEmailAndPassword(signupForm.email.value, signupForm.password.value).then(response => {
+            return response.user.updateProfile({
+              displayName : signupForm.secondname.value
+            })
+          }).then(response => {
+            console.log('SignUp successfull');
+            window.location.replace('../pages/blog.html');
+          }) 
+      });
+
+        
+  </script>
+
+
+  <script src="../scripts/index.js"></script> 
+  <script src="../scripts/userStatus.js"></script>
 </body>
 
 </html>

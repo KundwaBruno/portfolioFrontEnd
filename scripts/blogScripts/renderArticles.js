@@ -1,4 +1,5 @@
 let articleContainer = document.getElementsByClassName('container')[0];
+let loader = document.getElementById('loader');
 
 
 let articleArray = [];
@@ -9,8 +10,9 @@ function gettingArticles () {
 }
 
 async function renderInBrowser() {
-    console.log('Getting Data');
+    loader.style.display = "flex";
     const articles = await gettingArticles();
+    loader.style.display = "none";
     console.log(articles);
     articles.forEach(element => {
         var articleHtml = `<div data-id="${element._id}" class="blog">
@@ -21,7 +23,7 @@ async function renderInBrowser() {
             <div class="blog-content">
                 <div class="blog-head">
                     <div class="title"><a href= "../pages/blogPage.html?id=${element._id}">${element.title}</a></div>
-                    <div class="date">Posted ${moment(element.date).fromNow()}</div>
+                    <div class="date">Posted ${moment(element.date).calendar()}</div>
                 </div>
                 <div id="blog-body" class="blog-body">
                     ${element.description}

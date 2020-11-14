@@ -32,8 +32,8 @@
       <a href="#about">About</a>
       <a id="gotoBlog" href="./pages/signup.html">Blog</a>
       <a href="#contact">Contact</a>
-      <a style="margin-right: 0;" id="nameDisplay"></a>
-      <!-- <button class="btn" style="width: 70px; font-size: 16px; padding: 5px; border: none; background-color: #09d5b0;" id="logoutBtn"></button> -->
+      <a class="logBtn" href="resume">Resume <i class="fas fa-file"></i></a>
+      <a class="logBtn" id="logBtn" href="./pages/signin.html"></a>
     </div>
     <div class="hamburger" id="ham">
       <div class="hamb-line"></div>
@@ -46,8 +46,6 @@
     <a href="#about">About</a>
     <a id="gotoBlog" href="/pages/signup.html">Blog</a>
     <a href="#contact">Contact</a>
-    <!-- <i class="fas fa-user icons"></i>--><a id="nameDisplay" href="signin"></a>
-    <button class="btn" style="width: 70px; padding: 5px;" id="logoutBtn"></button> 
   </div>
 
   <!-- Navigation bar code ends here -->
@@ -133,7 +131,7 @@
 
   <div style="flex-direction: column;" class="container">
     <h1
-      style="font-size: 2rem; font-family: Balsamiq Sans, Arial, Helvetica, sans-serif; color: white; margin-bottom: 100px;">
+      style="font-size: 2rem; font-family: Balsamiq Sans, Arial, Helvetica, sans-serif; color: white; margin-bottom: 100px; opacity: 0.7;">
       _What I've
       built
     </h1>
@@ -206,22 +204,22 @@
       <div class="contact-heading">
         <h1 style="margin: 0;">CONTACT ME</h1>
         <P style="margin-top: 50px; margin-bottom: 50px;">What's next?</P>
-        <p>I kindly welcome anykind of opportunity,<br> Feel free to contact me, my inbox is always open<br> and i
+        <p>I kindly welcome anykind of opportunity,<br> Feel free to contact me by filling the form below, my inbox is always open<br> and i
           will
           try
           my
-          best to get back to you soon!<br> Fill out the form bellow :)</p>
+          best to get back to you soon! :)</p>
       </div>
     </div>
     <div class="contact-form">
       <form id="form" action="/messages" method="POST">
         Name:
-        <input name="name" id="fname" type="text" autocomplete="off" pattern="[A-Za-z, ]{3,}" title="I'm sorry but that could not be your name!" required>
+        <input name="name" id="fname" type="text" autocomplete="off" pattern="[A-Za-z, ]{3,}"required>
         Email:
         <input name="email" id="email" type="email" autocomplete="off" required>
         Message:
         <textarea name="message" id="user-message-field" name="w3review" rows="4" cols="50"></textarea>
-        <button type="submit" style="width: 80px;" class="btn">Send!</button>
+        <button id="sendBtn" type="submit" style="width: 80px;" class="btn">Send!</button><div id="loader"><div class="loading"></div></div><span id="feedback"></span>
       </form>
     </div>
   </div>
@@ -232,10 +230,14 @@
   <!-- Ends here -->
 
  
-<script src="index.js"></script>
+<script src="scripts/index.js"></script>
 <script>
 
-      let form = document.getElementById('form');
+      let messageForm = document.getElementById('form');
+      let loader = document.getElementById('loader');
+      let feedback = document.getElementById('feedback');
+      let sendBtn = document.getElementById('sendBtn');
+      console.log(sendBtn);
 
       function sendingMessage (data) {
             return fetch('https://kundwabruno-portfolio.herokuapp.com/messages' , {
@@ -248,24 +250,65 @@
             }).then(response => response.json());
       }
 
-      form.addEventListener('submit' , (e) => {
+      messageForm.addEventListener('submit' , (e) => {
           e.preventDefault();
           let data = {
-            name : form.name.value,
-            email : form.email.value,
-            message : form.message.value
+            name : messageForm.name.value,
+            email : messageForm.email.value,
+            message : messageForm.message.value
           }
+          try{
           async function messageConfirmation () {
+            loader.style.display = 'inline-block';
+            sendBtn.textContent = 'sending..'
             const response = await sendingMessage(data);
-            alert(response.Message);
+            loader.style.display = 'none';
+            feedback.textContent = "Message Sent!";
+            sendBtn.textContent = 'send!';
+            setTimeout(function () {feedback.textContent = ""} , 3000);
             form.reset();
           }
-
           messageConfirmation();
+        }catch (err) {
+          feedback.style.color = '#CD5B47';
+          feedback.textContent = "Message not sent! , Something went Wrong :(";
+        }
+
       });
 
 
 </script>
+
+<!-- Firebase Authentication -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBnGPcbDiThxWHQVsiVwTfAR1AlM-o5HQ4",
+    authDomain: "my-portfolio-53f39.firebaseapp.com",
+    databaseURL: "https://my-portfolio-53f39.firebaseio.com",
+    projectId: "my-portfolio-53f39",
+    storageBucket: "my-portfolio-53f39.appspot.com",
+    messagingSenderId: "544508778619",
+    appId: "1:544508778619:web:c3890bb7ff51b05e1faade",
+    measurementId: "G-9RLF5K1H1C"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  firebase.auth();
+</script>
+<script src="scripts/userStatus.js"></script>
+
+
 </body>
 
 </html>
